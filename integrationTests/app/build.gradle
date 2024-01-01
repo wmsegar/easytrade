@@ -1,0 +1,25 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+    implementation 'com.google.guava:guava:30.1.1-jre'
+    implementation 'com.google.code.gson:gson:2.9.1'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
+// ./gradlew cleanTest pluginTest -PeasyTradeUrl=easytrade.dev.demoability.dynatracelabs.com -PpluginName=ergoaggregatorslowdownplugin -PpluginEnabled=false
+task pluginTest(type: Test, dependsOn: testClasses){
+    systemProperties = ["easyTradeUrl": easyTradeUrl, "pluginName": pluginName, "pluginEnabled": pluginEnabled]
+
+    include "integrationTests/PluginTest*"
+}

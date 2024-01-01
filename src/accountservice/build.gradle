@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+	id "io.freefair.lombok" version "6.6"
+}
+
+group = 'com.dynatrace.easytrade'
+version = '1.0.0-easytrade'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'io.springfox:springfox-swagger2:3.0.0'
+	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+	implementation 'ch.qos.logback:logback-core'
+	implementation 'ch.qos.logback:logback-classic'
+	implementation 'org.slf4j:slf4j-api'
+
+	implementation 'com.google.code.gson:gson:2.9.1'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

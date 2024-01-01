@@ -1,0 +1,7 @@
+node_modules
+dist
+.gitignore
+Dockerfile
+Dockerfile.dev
+.priettierrc.yaml
+.env.*.local

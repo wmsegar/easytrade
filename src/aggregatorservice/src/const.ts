@@ -1,0 +1,19 @@
+export const STANDARD_DELAY_MS = 1000 * 3
+export const LONG_DELAY_MS = 1000 * 60 * 15
+export const REQUEST_TIME_LIMIT_MS = 1000
+export const CONSECUTIVE_FAIL_COUNTER_LIMIT = 50
+export const SIGNUP_COUNTER_LIMIT = 20 * 60
+
+export const PLATFORM_ENV_NAME = 'PLATFORM'
+export const FILTER_ENV_NAME = 'FILTER'
+export const MAXFEE_ENV_NAME = 'MAXFEE'
+
+export const STARTER_PACKAGE_PROBABILITY = "STARTER_PACKAGE_PROBABILITY"
+export const LIGHT_PACKAGE_PROBABILITY = "LIGHT_PACKAGE_PROBABILITY"
+export const PRO_PACKAGE_PROBABILITY = "PRO_PACKAGE_PROBABILITY"
+
+export enum Package {
+    Starter = 1,
+    Light = 2,
+    Pro = 3
+}

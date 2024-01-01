@@ -1,0 +1,16 @@
+FROM node:18.18.2-bullseye
+
+LABEL ENV="DEV"
+
+WORKDIR /app
+
+VOLUME ["./src"]
+
+COPY ["*.json", "yarn.lock", "./"]
+
+RUN yarn install
+
+# COPY ["public/", "./public"]
+COPY ["vite.config.ts", "index.html", "env.ts", ".env.*", "./"]
+
+CMD ["yarn", "run", "dev", "--host", "-d"]

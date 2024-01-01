@@ -1,0 +1,16 @@
+manifestVersion: 1.0
+projects:
+  - name: easytrade
+    path: easytrade
+    type: grouping
+environmentGroups:
+  - name: development
+    environments:
+      - name: dev
+        url:
+          type: environment
+          value: TENANT_URL
+        auth:
+          token:
+            type: environment
+            name: TENANT_TOKEN

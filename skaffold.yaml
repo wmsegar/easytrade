@@ -1,0 +1,74 @@
+apiVersion: skaffold/v4beta2
+kind: Config
+build:
+  artifacts:
+    - image: calculationservice
+      context: src/calculationservice
+    - image: contentcreator
+      context: src/contentcreator
+    - image: db
+      context: src/db
+    - image: feature-flag-service
+      context: src/feature-flag-service
+    - image: frontend
+      context: src/frontend
+    - image: frontendreverseproxy
+      context: src/frontendreverseproxy
+    - image: loginservice
+      context: src/loginservice/easyTradeLoginService
+    - image: manager
+      context: src/manager/easyTradeManager
+    - image: pricing-service
+      context: src/pricing-service
+    - image: rabbitmq
+      context: src/rabbitmq
+    - image: offerservice
+      context: src/offerservice
+    - image: accountservice
+      context: src/accountservice
+    - image: aggregatorservice
+      context: src/aggregatorservice
+    - image: engine
+      context: src/engine
+    - image: credit-card-order-service
+      context: src/credit-card-order-service
+    - image: third-party-service
+      context: src/third-party-service
+    - image: broker-service
+      context: src/broker-service
+  tagPolicy:
+    gitCommit: { ignoreChanges: true }
+  local:
+    concurrency: 4
+    push: false
+    tryImportMissing: true
+deploy:
+  statusCheckDeadlineSeconds: 300
+  tolerateFailuresUntilDeadline: true
+  kubectl: {}
+manifests:
+  kustomize:
+    paths:
+      - ./kubernetes-manifests/base
+profiles:
+  - name: aws-live
+    deploy:
+      kubectl: {}
+    manifests:
+      kustomize:
+        paths:
+          - ./kubernetes-manifests/aws-live
+  - name: aws-staging
+    deploy:
+      kubectl: {}
+    manifests:
+      kustomize:
+        paths:
+          - ./kubernetes-manifests/aws-staging
+  - name: aws-playground
+    deploy:
+      kubectl: {}
+    manifests:
+      kustomize:
+        paths:
+          - ./kubernetes-manifests/aws-playground
