@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: aggregator-service
-        image: gcr.io/dynatrace-demoability/easytrade/aggregator-service:151f288
+        image: gcr.io/dynatrace-demoability/easytrade/aggregatorservice:151f288
         env: []
         envFrom:
           - configMapRef:
