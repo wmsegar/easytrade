@@ -14,7 +14,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: gcr.io/dynatrace-demoability/easytrade/aggregator-service:151f288
+      app: aggregator-service
   template:
     metadata:
       labels:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: aggregator-service
-        image: aggregator-service
+        image: gcr.io/dynatrace-demoability/easytrade/aggregator-service:151f288
         env: []
         envFrom:
           - configMapRef:
