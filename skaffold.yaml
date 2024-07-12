@@ -49,26 +49,26 @@ deploy:
 manifests:
   kustomize:
     paths:
-      - ./kubernetes-manifests/base
-profiles:
-  - name: aws-live
-    deploy:
-      kubectl: {}
-    manifests:
-      kustomize:
-        paths:
-          - ./kubernetes-manifests/aws-live
-  - name: aws-staging
-    deploy:
-      kubectl: {}
-    manifests:
-      kustomize:
-        paths:
-          - ./kubernetes-manifests/aws-staging
-  - name: aws-playground
-    deploy:
-      kubectl: {}
-    manifests:
-      kustomize:
-        paths:
-          - ./kubernetes-manifests/aws-playground
+      - ./deployment
+# profiles:
+#   - name: aws-live
+#     deploy:
+#       kubectl: {}
+#     manifests:
+#       kustomize:
+#         paths:
+#           - ./kubernetes-manifests/aws-live
+#   - name: aws-staging
+#     deploy:
+#       kubectl: {}
+#     manifests:
+#       kustomize:
+#         paths:
+#           - ./kubernetes-manifests/aws-staging
+#   - name: aws-playground
+#     deploy:
+#       kubectl: {}
+#     manifests:
+#       kustomize:
+#         paths:
+#           - ./kubernetes-manifests/aws-playground
