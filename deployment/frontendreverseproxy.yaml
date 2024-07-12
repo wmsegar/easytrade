@@ -27,10 +27,11 @@ kind: Service
 metadata:
   name: frontendreverseproxy-easytrade
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: frontendreverseproxy
   ports:
     - name: http
       port: 80
       targetPort: 80
+      nodePort: 30100
