@@ -56,7 +56,7 @@
 
 	// // Add recommended secrets
 	"secrets": {
-	 	  "DT_ENDPOINT": {
+	 	  "DT_URL": {
 	 		"description": "eg. https://abc12345.live.dynatrace.com"
 		},
 		  "DT_TOKEN": {
