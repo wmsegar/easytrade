@@ -35,8 +35,11 @@ spec:
                   key: JAVA_CONNECTION_STRING
           resources:
             requests:
-              cpu: 150m
+              cpu: 100m
               memory: 100Mi
+            limits:
+              cpu: 150m
+              memory: 200Mi
 ---
 apiVersion: v1
 kind: Service

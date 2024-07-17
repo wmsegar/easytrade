@@ -19,8 +19,11 @@ spec:
           env: []
           resources:
             requests:
-              cpu: 150m
+              cpu: 100m
               memory: 100Mi
+            limits:
+              cpu: 150m
+              memory: 150Mi
 ---
 apiVersion: v1
 kind: Service

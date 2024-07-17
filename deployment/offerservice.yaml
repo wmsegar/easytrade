@@ -34,8 +34,11 @@ spec:
                 name: feature-flag-service-setup
           resources:
             requests:
-              cpu: 300m
+              cpu: 150m
               memory: 100Mi
+            limits:
+              cpu: 300m
+              memory: 200Mi
 ---
 apiVersion: v1
 kind: Service
