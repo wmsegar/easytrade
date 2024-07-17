@@ -23,7 +23,13 @@ spec:
       containers:
       - name: aggregator-service
         image: gcr.io/dynatrace-demoability/easytrade/aggregatorservice:151f288
-        env: []
+        env:
+          - name: STARTER_PACKAGE_PROBABILITY
+            value: "1"
+          - name: LIGHT_PACKAGE_PROBABILITY
+            value: "2"
+          - name: PRO_PACKAGE_PROBABILITY
+            value: "3"
         envFrom:
           - configMapRef:
               name: aggregator-service-envs
