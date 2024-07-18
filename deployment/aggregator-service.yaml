@@ -30,6 +30,8 @@ spec:
             value: "2"
           - name: PRO_PACKAGE_PROBABILITY
             value: "3"
+          - name: PLATFORM
+            value: "dev"
         envFrom:
           - configMapRef:
               name: aggregator-service-envs
@@ -39,4 +41,4 @@ spec:
             memory: 100Mi
           limits:
             cpu: 50m
-            memory: 100Mi
+            memory: 150Mi
