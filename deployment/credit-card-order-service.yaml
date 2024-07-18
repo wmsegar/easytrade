@@ -48,6 +48,9 @@ spec:
                 configMapKeyRef:
                   name: connection-strings
                   key: JAVA_CONNECTION_STRING
+          volumeMounts:
+            - mountPath: /opt/devobs
+              name: debugger
           resources:
             requests:
               cpu: 100m
