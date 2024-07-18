@@ -289,6 +289,7 @@ kubectl apply -f /workspaces/$RepositoryName/dynatrace/kubernetes.yaml
 kubectl apply -f /workspaces/$RepositoryName/dynatrace/kubernetes-csi.yaml
 kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/name=dynatrace-operator,app.kubernetes.io/component=webhook --timeout=300s
 kubectl -n dynatrace apply -f /workspaces/$RepositoryName/dynatrace/dynakube.yaml
+kubectl -n dynatrace wait pod --for=condition=ready --selector=app.kubernetes.io/component=activegate --timeout=300s
 
 # kubectl create secret generic dynatrace-otelcol-dt-api-credentials \
 #   --from-literal=DT_ENDPOINT=$DT_ENDPOINT \
