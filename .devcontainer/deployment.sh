@@ -6,6 +6,8 @@ kubectl create namespace dynatrace
 sed -i "s,TENANTURL_TOREPLACE,$DT_URL," /workspaces/$RepositoryName/dynatrace/dynakube.yaml
 sed -i "s,CLUSTER_NAME_TO_REPLACE,aio-dt-demo,"  /workspaces/$RepositoryName/dynatrace/dynakube.yaml
 
+sed -i "s,VALUETOREPLACEWITHKEY,$DEBUGGER_KEY," /workspaces/$RepositoryName/deployment/credit-card-order-service.yaml
+
 # Capture OpenTelemetry Span Attributes
 # curl -X 'POST' \
 #   "$DT_ENDPOINT/api/v2/settings/objects?validateOnly=false" \

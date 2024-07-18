@@ -64,6 +64,10 @@
 		},
 		  "DT_OPERATOR_TOKEN": {
 			"description": "Dynatrace API token with these permissions: Create ActiveGate token, Read entities, Read Settings, Write Settings, Access problem and event feed, metrics and topology, Read configuration, Write configuration, Paas integration - installer downloader"
+		},
+		  "DT_DEBUGGER" : {
+			 "description":"Rookout token"
 		}
+
 	}
 }

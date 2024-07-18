@@ -11,6 +11,17 @@ spec:
       labels:
         app: credit-card-order-service
     spec:
+      initContainers:
+        - name: download-debugging-agent
+          image: alpine:latest
+          command:
+            - /bin/sh
+          args:
+            - -c
+            - wget -O /opt/devobs/rookout.jar "https://search.maven.org/remote_content?g=com.rookout&a=rook&v=0.1.265"
+          volumeMounts:
+            - mountPath: /opt/devobs
+              name: debugger
       containers:
         - name: credit-card-order-service
           image: gcr.io/dynatrace-demoability/easytrade/credit-card-order-service:151f288
@@ -28,6 +39,10 @@ spec:
               value: "300"
             - name: WORK_RATE
               value: "900"
+            - name: ROOKOUT_TOKEN
+              value: "VALUETOREPLACEWITHKEY"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-javaagent:/opt/devobs/rookout.jar"
             - name: MSSQL_CONNECTIONSTRING
               valueFrom:
                 configMapKeyRef:
@@ -40,6 +55,9 @@ spec:
             limits:
               cpu: 150m
               memory: 300Mi
+      volumes:
+        - name: debugger
+          emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
