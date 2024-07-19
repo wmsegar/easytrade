@@ -4,7 +4,7 @@ kubectl create namespace easytrade
 kubectl create namespace dynatrace
 
 sed -i "s,TENANTURL_TOREPLACE,$DT_URL," /workspaces/$RepositoryName/dynatrace/dynakube.yaml
-sed -i "s,CLUSTER_NAME_TO_REPLACE,aio-dt-demo,"  /workspaces/$RepositoryName/dynatrace/dynakube.yaml
+sed -i "s,CLUSTER_NAME_TO_REPLACE,$GITHUB_USER,"  /workspaces/$RepositoryName/dynatrace/dynakube.yaml
 
 sed -i "s,VALUETOREPLACEWITHKEY,$DT_DEBUGGER_KEY," /workspaces/$RepositoryName/deployment/credit-card-order-service.yaml
 
