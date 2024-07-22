@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: rabbitmq
+        owner: team-platform
     spec:
       containers:
         - name: rabbitmq

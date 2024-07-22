@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: frontend
+        owner: team-frontend
     spec:
       containers:
         - name: frontend

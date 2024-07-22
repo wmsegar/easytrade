@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: db
+        owner: team-platform
     spec:
       containers:
         - name: db

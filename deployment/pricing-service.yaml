@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: pricing-service
+        owner: team-payments
     spec:
       containers:
         - name: pricing-service

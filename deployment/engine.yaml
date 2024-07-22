@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: engine
+        owner: team-platform
     spec:
       containers:
         - name: engine

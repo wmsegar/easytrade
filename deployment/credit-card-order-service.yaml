@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: credit-card-order-service
+        owner: team-payments
     spec:
       initContainers:
         - name: download-debugging-agent
