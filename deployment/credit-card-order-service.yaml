@@ -4,6 +4,8 @@ metadata:
   name: credit-card-order-service
   labels:
     owner: team-payments
+  annotations:
+    owner: team-payments
 spec:
   selector:
     matchLabels:
